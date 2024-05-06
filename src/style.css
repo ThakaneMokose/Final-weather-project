@@ -1,0 +1,107 @@
+* {
+        font-family: "Reddit Mono", monospace;
+        font-optical-sizing: auto;
+        font-style: normal;
+    }
+body{
+    background: rgb(80, 64, 95);
+    color: rgb(28, 4, 49);
+    }
+.weather-app{
+    background: rgb(108, 91, 124);
+    background: linear-gradient(180deg, rgba(108, 91, 124, 1) 40%, rgba(192, 108, 132, 1) 65%, rgba(246, 114, 128, 1) 80%, rgba(248, 181, 149, 1) 95%);
+    padding:20px;
+    border-radius: 22px;
+    max-width: 570px;
+    display: block;
+    margin: 30px auto;
+}
+.weather-form{
+    display: block;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 5px 25px 20px 25px;
+    display: flex;
+    justify-content: space-between;
+}
+.form-city-input{
+    border-radius: 100px;
+    border: none;
+    padding: 10px;
+    width: 380px;
+    background: rgb(210, 187, 231);
+}
+.form-city-search{
+    border-radius: 100px;
+    border: none;
+    padding: 10px;
+    width: 80px;
+    background: rgba(80, 64, 95, 0.404);
+}
+.city, .current-date{
+    text-align: center;
+}
+.city{
+    margin-bottom: 0px;
+    text-transform: uppercase;
+    color: rgb(53, 33, 71);
+}
+.current-date{
+    margin-top: 0px;
+}
+.current-day, .current-time{
+    font-size: 20px;
+}
+.current-icon-description{
+    text-align: center;
+}
+.current-day-temperature{
+    position: relative;
+    top:35px;
+}
+.current-icon{
+    font-size: 140px;
+}
+.current-temperature{
+    font-size: 100px;
+}
+.current-unit{
+    font-size: 40px;
+    font-weight: bold;
+    position: relative;
+    top: -45px;
+}
+.maximum .material-symbols-outlined{
+    color: red;
+}
+.minimum .material-symbols-outlined{
+    color:blue
+}
+.forcast-day-weather{
+    text-align: center;
+    margin-top: 15px;
+}
+.forcast-day{
+    font-weight: bold;
+}
+.forcast-icon{
+    font-size: 35px;
+}
+.humidity-wind{
+    font-size: 12px;
+    letter-spacing: -0.4px;
+}
+.current-day-weather, .forcast-weather{
+    display: flex;
+    justify-content: space-between;
+}
+footer{
+    padding-top: 20px;
+    margin-top: 20px;
+    font-size: 13px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    color: rgba(28, 4, 49, 0.664);
+}
+footer a{
+    text-decoration: none;
+    color: #c0214ee0;
+}
