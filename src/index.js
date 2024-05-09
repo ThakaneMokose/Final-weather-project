@@ -23,6 +23,26 @@ function display(response){
     humidity.innerHTML = `${response.data.temperature.humidity}%`;
     wind.innerHTML = `${response.data.wind.speed}km/h`;
 
+    let dayTime= document.querySelector("#current-date");
+    let today = new Date(response.data.time * 1000);
+    dayTime.innerHTML= displayDay(today);
+}
+
+function displayDay(date){
+    let days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+    let day = days[date.getDay()];
+    let hour = date.getHours();
+    let minute = date.getMinutes();
+
+    if (hour < 10) {
+        hour=`0${hour}`
+    }
+    if (minute < 10) {
+        minute = `0${minute}`        
+    }
+    
+    let results= `${day}, ${hour}:${minute}`;
+    return results
 }
 
 let cityInput = document.querySelector("#weather-form");
