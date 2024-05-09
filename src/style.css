@@ -43,6 +43,7 @@ body{
 .city{
     margin-bottom: 0px;
     text-transform: uppercase;
+    letter-spacing: 20px;
     color: rgb(53, 33, 71);
 }
 .current-date{
