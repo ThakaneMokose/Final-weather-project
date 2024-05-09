@@ -46,23 +46,22 @@ body{
     color: rgb(53, 33, 71);
 }
 .current-date{
-    margin-top: 0px;
-}
-.current-day, .current-time{
+    margin: 0px;
     font-size: 20px;
 }
 .current-icon-description{
     text-align: center;
 }
-.current-day-temperature{
-    position: relative;
-    top:35px;
-}
 .current-icon{
     font-size: 140px;
+    position: relative;
+    top: -15px;
 }
 .current-temperature{
-    font-size: 100px;
+    font-size: 140px;
+}
+.current-humidity-wind {
+    font-size: 12px;
 }
 .current-unit{
     font-size: 40px;
@@ -74,7 +73,7 @@ body{
     color: red;
 }
 .minimum .material-symbols-outlined{
-    color:blue
+    color:blue;
 }
 .forcast-day-weather{
     text-align: center;
@@ -85,10 +84,6 @@ body{
 }
 .forcast-icon{
     font-size: 35px;
-}
-.humidity-wind{
-    font-size: 12px;
-    letter-spacing: -0.4px;
 }
 .current-day-weather, .forcast-weather{
     display: flex;

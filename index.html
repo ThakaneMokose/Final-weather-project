@@ -3,48 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/src/style.css">
+    <link rel="stylesheet" href="src/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@200..900&display=swap" rel="stylesheet">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
     <title>Weather App</title>
 </head>
 <body>
 
     <div class="weather-app">
 
-        <form class="weather-form">
-            <input type="text" class="form-city-input" placeholder="Search for city...">
+        <form class="weather-form" id="weather-form">
+            <input type="text" class="form-city-input" id="form-city-input" placeholder="Search for city...">
             <input type="submit" class="form-city-search" value="Search">
         </form>
 
-        <h1 class="city">Maseru</h1>
-        <p class="current-date">
-            <span class="current-day">Monday,</span>
-            <span class="current-time">16:58</span> <br>
-            <span class="humidity-wind">
-                Humidity: <span class="humidity">47%</span>,
-                Wind: <span class="wind">6km/h</span>
-            </span>
-        </p>
+        <h1 class="city" id = "city"></h1>
+        <p class="current-date"> Monday, 16:38 </p>
 
         <div class="current-day-weather">
             <div class="current-icon-description">
-                <div class="current-icon">🌤️</div>
-                <div class="current-description"> slight clouds</div>
+                <div class="current-icon" id = "current-icon"></div>
+                <div class="current-description" id="current-description"></div>
             </div>
             <div class="current-day-temperature">
-                <div class="current-temperature"><span id="current-temp">30</span><span class="current-unit">ºc</span></div>
-                <div class="weather-maximum-minimum">
-                    <span class="maximum">
-                        <span class="material-symbols-outlined">
-                        arrow_drop_up
-                    </span>22º</span>
-                    <span class="minimum"><span class="material-symbols-outlined">
-                        arrow_drop_down
-                    </span>13º</span>
+                <div class="current-temperature"><span id="current-temp"></span><span class="current-unit">ºc</span></div>
+                <div class="current-humidity-wind">
+                    Humidity: <span class="humidity" id="humidity"></span>,
+                    Wind: <span class="wind" id="wind"></span>
                 </div>
             </div>
         </div>
@@ -68,6 +57,6 @@
         </footer>
     </div>
 
-    <script src="/src/index.js"></script>
+    <script src="src/index.js"></script>
 </body>
 </html>
