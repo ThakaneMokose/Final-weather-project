@@ -6,6 +6,8 @@ function citySearch(event){
     let apiKey = "37f0fb1ca0e581f1bae6o2294b1tb475";
     let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
     axios(apiUrl).then(display);
+    axios(apiForcast).then(getForcast);
+
 }
 
 function display(response){
@@ -17,7 +19,7 @@ function display(response){
     let wind = document.querySelector("#wind");
 
     thisCity.innerHTML = response.data.city;
-    icon.innerHTML = `<img src=${response.data.condition.icon_url} alt=${response.data.condition.icon}>`;
+    icon.innerHTML = `<img src=${response.data.condition.icon_url} alt=${response.data.condition.icon}  class="current-icon">`;
     description.innerHTML = response.data.condition.description;
     temperature.innerHTML = Math.round(response.data.temperature.current);
     humidity.innerHTML = `${response.data.temperature.humidity}%`;
@@ -44,6 +46,30 @@ function displayDay(date){
     let results= `${day}, ${hour}:${minute}`;
     return results
 }
+function getForcast(response){
+
+    for (let i = 0; i < 4; i++) {
+
+        let today = new Date(response.data.daily[i].time * 1000);
+        let days = ["Sun","Mon","Tue","Wed","Thur","Fri","Sat"];
+        
+        
+        let forecastWeather = document.querySelector("#forcast-weather");
+        forecastWeather.innerHTML += `<div class="forcast-day-weather">
+                <p class="forcast-day">${days[today.getDay()]}</p>
+                <div class="forcast-icon"><img src=${response.data.daily[i].condition.icon_url} alt=${response.data.daily[i].condition.icon}></div>
+                <div class="weather-maximum-minimum">
+                    <span class="maximum">
+                        <span class="material-symbols-outlined">
+                            arrow_drop_up
+                        </span >${ Math.round(response.data.daily[i].temperature.maximum)}</span>
+                        <span class="minimum"><span class="material-symbols-outlined">
+                            arrow_drop_down
+                        </span>${Math.round(response.data.daily[i].temperature.minimum)}</span>
+                </div>
+            </div>`;        
+    }
+}
 
 let cityInput = document.querySelector("#weather-form");
 cityInput.addEventListener("submit", citySearch);
@@ -51,6 +77,7 @@ cityInput.addEventListener("submit", citySearch);
 let city = "Maseru";
 let apiKey = "37f0fb1ca0e581f1bae6o2294b1tb475";
 let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
+let apiForcast = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`
 
 axios(apiUrl).then(display);
-
+axios(apiForcast).then(getForcast);

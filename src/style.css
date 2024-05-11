@@ -54,12 +54,12 @@ body{
     text-align: center;
 }
 .current-icon{
-    font-size: 140px;
+    width: 220px;
     position: relative;
-    top: -15px;
+    top: -8px;
 }
 .current-temperature{
-    font-size: 140px;
+    font-size: 110px;
 }
 .current-humidity-wind {
     font-size: 12px;
