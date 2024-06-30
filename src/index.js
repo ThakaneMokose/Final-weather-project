@@ -48,14 +48,14 @@ function displayDay(date){
 }
 function getForcast(response){
 
+    let forecastWeather = "";
+
     for (let i = 0; i < 4; i++) {
 
         let today = new Date(response.data.daily[i].time * 1000);
         let days = ["Sun","Mon","Tue","Wed","Thur","Fri","Sat"];
         
-        
-        let forecastWeather = document.querySelector("#forcast-weather");
-        forecastWeather.innerHTML += `<div class="forcast-day-weather">
+        forecastWeather += `<div class="forcast-day-weather">
                 <p class="forcast-day">${days[today.getDay()]}</p>
                 <div class="forcast-icon"><img src=${response.data.daily[i].condition.icon_url} alt=${response.data.daily[i].condition.icon}></div>
                 <div class="weather-maximum-minimum">
@@ -69,6 +69,8 @@ function getForcast(response){
                 </div>
             </div>`;        
     }
+    let finalForcast = document.querySelector("#forcast-weather");
+    finalForcast.innerHTML = forecastWeather;
 }
 
 let cityInput = document.querySelector("#weather-form");
